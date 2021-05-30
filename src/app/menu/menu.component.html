@@ -1,1 +1,11 @@
-<div><mat-toolbar color="primary"><button mat-fab onclick="window.open('https://www.linkedin.com/in/joshua-anderson-ja1337/', '_blank');"><mat-icon><img src="../../assets/linkedin.svg"/></mat-icon></button></mat-toolbar></div>
+<div>
+    <!-- example for pipe currency <p>currency is {{dollars|currency}}</p> -->
+    <mat-toolbar class="menu" color="primary">
+        <div class="routes"><app-navigation></app-navigation></div>
+        <div class="social"><app-social></app-social></div>
+    </mat-toolbar>
+    <mat-toolbar class="mobile" color='primary' >
+        
+          <div class="routes" ><app-navigation></app-navigation></div>
+    </mat-toolbar>
+</div>

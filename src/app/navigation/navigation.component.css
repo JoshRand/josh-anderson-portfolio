@@ -1,0 +1,49 @@
+@media only screen and (min-width: 1000px)
+{
+    
+    .mobile
+    {
+        display: none;
+    }
+     button{
+        background-color: transparent;
+        border-radius: 0; 
+    } 
+}
+
+@media only screen and (max-width: 1000px)
+{
+    /* mobile */
+    .desktop
+    {
+        display: none;
+    }
+    .mat-icon{
+        color: rgb(170, 255, 0);
+        /* font-size: 40px; */
+        text-align: center;
+    }
+    
+    button{
+        color: rgb(170, 255, 0);
+        font-size: large;
+        border-radius: 0;
+        /* text-shadow: black 2px 2px 3px; */
+    }
+    .mat-mobile-menu{
+        background-color:rgb(102, 33, 192);
+        color: rgb(170, 255, 0);
+        font-size: large;
+        border-radius: 0;
+    }
+    /* .mat-menu-buttons{
+        color: rgb(170, 255, 0);
+        font-size: 25px;
+        text-shadow: black 2px 2px 3px; 
+        text-align: center;
+
+    } */
+    
+}
+   
+

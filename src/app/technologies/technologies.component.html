@@ -1,0 +1,11 @@
+<a *ngFor="let technology of technologies">
+    <a *ngFor="let tech of technology; index as i;">
+        <a *ngIf="i != technology.length - 1">
+            {{tech}}, 
+            
+        </a>
+        <a *ngIf="i == technology.length - 1">
+            {{tech}}
+        </a>
+    </a>
+</a>

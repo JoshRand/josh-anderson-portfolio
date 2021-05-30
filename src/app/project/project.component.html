@@ -1,0 +1,48 @@
+<div class="main-div">
+    <div style="margin-top:170px">
+           
+       
+       
+        <h1 style="text-align: center;">{{project.title}}</h1>
+        <mat-grid-list cols="7" rowHeight="20px" id="gridid">
+            <mat-grid-tile
+            *ngFor="let tile of project.grid_tiles"
+            [colspan]="tile.cols"
+            [rowspan]="tile.rows"
+            [style.background]="tile.background_color">
+                <div *ngIf="tile.tile_type === 'image'">
+                    <img class="grid-img" src="{{tile.image}}">
+                </div>
+                <div *ngIf="tile.title != ''">
+                    <p class="title" style="font-size: 30px;color:greenyellow; text-align: left;">{{tile.title}}</p>
+                </div>
+                <div *ngIf="tile.tile_type === 'text'">
+                    <p class="text">{{tile.content}}</p>
+                </div>
+                <div *ngIf="tile.tile_type === 'carousel'">
+                    <section class="carousel" >
+                        <button mat-icon-button class="carousel-left-arrow-button" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
+                        <div class="carousel-item">
+                            <img id="carousel-item-center" src="{{slides[slide_index].image}}">
+                        </div>
+                        <button mat-icon-button class="carousel-right-arrow-button" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
+                    </section>
+                    <a class="carousel-item-description">{{slides[slide_index].image_description}}</a>
+                </div>
+                <div *ngIf="tile.tile_type === 'demo'">
+                    <iframe width="560"
+                     height="315" 
+                     [src]="demoUrl" 
+                     title="YouTube video player" 
+                     frameborder="0" 
+                     allowfullscreen></iframe>
+                </div>
+               
+            </mat-grid-tile>
+        </mat-grid-list>
+       
+  
+      
+    </div>
+    
+<div>

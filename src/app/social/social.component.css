@@ -1,0 +1,10 @@
+button{
+    position: relative;
+    margin-right: 10px;
+    background-color: greenyellow !important;
+    
+}
+button:hover{
+    box-shadow: black 0px 0px 10px;
+    transition: 250ms linear; 
+}

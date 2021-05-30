@@ -1,0 +1,44 @@
+
+<div class="grid" id="gridid">
+    <div class="grid-item1" style="color:greenyellow"><a>Past Projects</a></div>
+    <div class="grid-item" *ngFor="let project of test_array; let i = index">
+        <div class="mobile">
+            <div class="project-card" [routerLink]="['/project', project.id]" (click)="clickedProject()">
+                <div class="project-text">
+                    <h1 style="color:greenyellow">{{project.title}}</h1> 
+                    <p>{{project.description}}</p>
+                    <br>
+                    <!-- <a>Technologies:</a> -->
+                    <br>
+                    <p style="display:flex">
+                        <mat-icon style="color:greenyellow;">memory</mat-icon>
+                        <app-technologies [technologies]="[project.technologies]" style="margin-left:2px;margin-top:2px;"></app-technologies>
+                    </p>
+                </div>
+                <div class="image-div">
+                    <img src="{{project.image}}" class="project-image">
+                </div>
+            </div>
+        </div>
+        <div class="desktop">
+            <div class="project-card">
+                <div class="project-text">
+                    <h1 style="color:greenyellow">{{project.title}}</h1> 
+                    <!-- text-decoration: underline;  -->
+                    <p>{{project.description}}</p>
+                    <br>
+                    <!-- <a style="color:greenyellow">Technologies:</a> -->
+                    <br>
+                    <p style="display:flex">
+                        <mat-icon style="color:greenyellow;">memory</mat-icon>
+                        <app-technologies [technologies]="[project.technologies]" style="margin-left:2px;margin-top:2px;"></app-technologies>
+                    </p>
+                    <button mat-flat-button color="primary" (click)="clickedProject()" class="learn-more"  [routerLink]="['/project', project.id]" >Learn More</button>
+                </div>
+                <div class="image-div">
+                    <img src="{{project.image}}" class="project-image">
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,18 @@
+
+<div class="main-div">
+    <div class="introduction-container">
+        <button mat-raised-button color="primary" (click)="Reset()" style="visibility: hidden;" >Debug Reset Type Text</button>
+        <br>
+        <br>
+        <h1 class="introduction">
+            <span id="introduction-text">
+            </span>
+            <span id="cursor" class="blinking_cursor">_</span>
+        </h1>
+        <p></p>
+        <button mat-flat-button color="primary" class="portfolio-button" id="portfolio-button"  [routerLink]="['/portfolio']">View my Portfolio<mat-icon>keyboard_arrow_right</mat-icon></button>
+    </div>
+    
+</div>
+
+<canvas id="canvas" width="100%" height="100%"></canvas>

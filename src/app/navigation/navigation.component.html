@@ -1,0 +1,19 @@
+<div class="mobile">
+    <mat-icon style="color:greenyellow; float:left; font-size: 30px; position:absolute;top:17px" (click)="back()">keyboard_arrow_left</mat-icon>
+    <div style="position:absolute;top:13px;right:16px">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon style="margin-right:0;">menu</mat-icon>
+            </button>
+    </div>
+</div>
+
+<mat-menu #menu="matMenu" class="mat-mobile-menu">
+    <a *ngFor="let link of nav_links" >
+          <button mat-menu-item  [routerLink]="[link.Link]" class='mat-menu-buttons' style="text-align: center; height:80px; width: 200px; color:greenyellow; font-size: 20px;">{{ link.LinkName }}</button>
+    </a>
+</mat-menu>
+<div class="desktop">
+    <a *ngFor="let link of nav_links" >
+        <button mat-button (click)="onClick()"  [routerLink]="[link.Link]" style="color:rgb(170,255,0);font-size: large; border-radius: 0;">{{ link.LinkName }}</button>
+    </a>
+</div>

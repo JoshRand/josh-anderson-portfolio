@@ -1,4 +1,4 @@
-<body>
-  <div><app-menu></app-menu></div>
-  <div><router-outlet> </router-outlet></div>
+<body (scroll)="scrolling()">
+  <div class="nav-menu" id="navbar"><app-menu></app-menu></div>
+  <div><router-outlet></router-outlet></div> 
 </body>

@@ -1,0 +1,109 @@
+
+
+
+.grid-item-intro > a{
+   
+    /* background-color: gray; */
+    font-size: calc(20px + 1.5vw);
+    /* text-align: center; */
+    color: greenyellow;
+    
+}
+.grid-item-intro{
+    font-size: 15px;
+}
+.grid-item-intro > p > a {
+    color: greenyellow;
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    .about-me-grid{
+        margin-top:100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        grid-template-rows: repeat(1,1fr);
+        /* background-color: #000000; */
+        background-color:  rgb(66, 66, 66);
+        border: 1pt black solid; 
+        max-width: 900px;
+        grid-gap:20px;
+        padding:20px;
+    }
+    .grid-item-intro-cont{
+        /* background-color: lightblue; */
+        grid-column: 1/5;
+        grid-row: 2/2;
+        color:white;
+        font-size: 15px;
+    }
+    .grid-item-intro{
+        /* background-color: blue; */
+        grid-column: 2/5;
+        grid-row: 1/2;
+        padding-top:10px;
+        /* text-align: center; */
+    }
+    .grid-item-picture{
+        /* background-color: gray; */
+        /* max-width: 300px;
+        max-height: 600px; */
+        box-shadow: black 0px 0px 5px 5px;
+        object-fit: cover;
+        height: 290px;
+        width: 250px;
+        object-position: 0% 80%;
+        /* width:200px; */
+        /* max-width:calc(250px + 0.6vw); */
+        /* max-height:calc(300px + 1.5vw); */
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+}
+@media only screen and (max-width: 1000px)
+{
+     /* Mobile  */
+     .about-me-grid{
+        margin-top:100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        justify-content: center;
+        grid-template-columns:repeat(1,1fr);
+        /* background-color: #000000; */
+        background-color:  rgb(66, 66, 66);
+        border: 1pt black solid; 
+        max-width: 900px;
+        /* grid-gap:10px; */
+        padding:20px;
+    }
+    .grid-item-intro{
+        padding-top:10px;
+        /* text-align: center; */
+    }
+    .grid-item-picture{
+        box-shadow: black 0px 0px 5px 5px;
+        object-fit: cover;
+        object-position: 40% 60%;
+        max-width:calc(200px + 0.6vw);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:20px;
+        margin-bottom:20px;
+        display: block;
+    }
+    .grid-item-intro > a{
+        display: block;
+        /* background-color: gray; */
+        font-size: calc(20px + 1.5vw);
+        color: greenyellow;
+        grid-row-gap: 10px;
+        text-align: center;
+       
+        
+    }
+    
+}

@@ -1,0 +1,85 @@
+h1{
+    color:greenyellow !important;
+}
+.carousel{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color:greenyellow !important;
+    
+}
+/deep/ .mat-mini-fab{
+    background-color:greenyellow;
+}
+/* .grid-img{
+    max-width: 450px;
+} */
+p{
+    position: absolute; 
+    /* display: flex; */
+    left:5px;
+    
+    }
+.title{
+    bottom:5px;
+}
+.text{
+    text-indent: 30px;
+    top:5px;
+}
+mat-grid-tile{
+    z-index: 0;
+    display: block;
+    
+}
+
+.main-div{
+margin-top: -48px; margin-left: auto;margin-right: auto;width:900px;
+}
+
+img{
+    /* image-rendering: optimizeSpeed; */
+    object-fit: scale-down;
+    margin-left: auto;
+    margin-right:auto;
+    max-width: inherit;
+    max-height:inherit;
+}
+.carousel-item{
+    display: flex;
+    /* background-color: green; */
+    width: inherit;
+    height:inherit;
+}
+h1{
+    font-size: 50px;
+}
+.carousel{
+    /* margin-top: -100px; */
+    width:800px;
+    height:400px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: none;
+    border:grey 1pt solid;
+    position: relative;
+    overflow-x:hidden;
+}
+.carousel-left-arrow-button{
+    position:absolute;
+    top:45%;
+    left:5px;
+}
+.carousel-right-arrow-button{
+    position:absolute; 
+    top:45%;
+    right:5px;
+    float: right;
+}
+.carousel-item-description{
+    margin-top:5px;
+    display: block;
+    text-align: center;
+    color:greenyellow;
+    /* background-color: grey; */
+}
