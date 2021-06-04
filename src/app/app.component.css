@@ -2,10 +2,10 @@ body{
     color:white;
     height: 100%; 
     overflow:auto;
+    background: linear-gradient(-45deg,  rgb(30, 30, 30),rgb(41, 41, 41),rgb(50, 50, 50),rgb(50, 50, 50), rgb(41, 41, 41), rgb(30, 30, 30));
     background-size: 400% 400%;
-    background: linear-gradient(-45deg,  rgb(30, 30, 30),rgb(41, 41, 41),rgb(53, 53, 53), rgb(41, 41, 41), rgb(30, 30, 30));
     scroll-behavior: smooth;
-    animation: gradient 20s ease infinite;
+    animation: gradient 10s ease-in infinite;
   }
   
   @keyframes gradient{

@@ -21,16 +21,18 @@ const projects = [
   {
     'id':0,
     'title':'The Automated Game Player',
-    'description':'An Application to controll characters in a video game based on game memory data. ',
+    'description':'An Application to control characters in a video game based on game memory data. ',
     'technologies':[
       'C#',
+      '.NET',
       'Windows Forms',
       'A* Pathfinding',
+      'MemoryAccess Library',
       'Visual Studio',
       'GitHub',
     ],
-    'image':'../../assets/PoetControlls.PNG',
-    'demo':'fnVsgb1SXU8',
+    'image':'../../assets/TAGP/AStarVisualizer2.PNG',
+    'demo':'-QF4bZye_Ns',
     'grid_tiles':
     [
     {title: 'About', cols:7, rows: 3, background_color: 'none', tile_type:'text', image:''},
@@ -39,13 +41,19 @@ const projects = [
     {title: '', cols:7, rows: 21, background_color: 'none', tile_type:'carousel', image:''},
     {title: 'Demo', cols: 7, rows: 3, background_color: '', tile_type:'text', image:'', section:'true'},
     {title: '', cols: 7, rows: 16, background_color: 'none', tile_type:'demo', image:''},
-    {title: 'four', cols: 7, rows: 2, background_color: 'yellow', tile_type:'text', image:''}
+    {title: '', cols: 7, rows: 5, background_color: 'none', tile_type:'text', image:''}
   ],
-    'slides':[{image_description:'Healer Controls Form', image:'../../assets/PoetControlls.PNG'},
-    {image_description:'All Forms', image:'../../assets/Menus.PNG'},
-    {image_description:'Fighter Form', image:'../../assets/FighterControls.PNG'},
-    {image_description:'Player Select Form', image:'../../assets/PlayerSelectionMenu.PNG'},
-    {image_description:'A* Visualization', image:'../../assets/AstarHpathFighter.PNG'}]
+    'slides':[
+    {image_description:'All Forms', image:'../../assets/TAGP/AllForms.PNG'},
+    {image_description:'Player Select Form', image:'../../assets/TAGP/PlayerSelectionMenu.PNG'},
+    {image_description:'Fighter Form', image:'../../assets/TAGP/FighterControls.PNG'},
+    {image_description:'Healer Form', image:'../../assets/TAGP/PoetControlls.PNG'},
+    {image_description:'A* Visualizer 1', image:'../../assets/TAGP/AStarVisualizer1.PNG'},
+    {image_description:'A* Visualizer 2', image:'../../assets/TAGP/AStarVisualizer2.PNG'},
+    {image_description:'A* Visualizer 3', image:'../../assets/TAGP/AStarVisualizer3.PNG'},
+    {image_description:'MemoryAccess Code', image:'../../assets/TAGP/MemAccess.PNG'},
+    {image_description:'Memory Hex Data View', image:'../../assets/TAGP/LocationsOfPointersExample.PNG'},
+  ]
   },
   {
     'id':1,
@@ -59,8 +67,8 @@ const projects = [
       'Android Studio',
       'GitHub',
     ],
-    'image':'../../assets/AndroidApp1.png',
-    'demo':'https://www.youtube.com/embed/fnVsgb1SXU8',
+    'image':'../../assets/ST/AndroidApp1.png',
+    'demo':'fnVsgb1SXU8',
     'grid_tiles':[{text: 'One', cols: 3, rows: 1, background_color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, background_color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, background_color: 'lightpink'},
@@ -83,8 +91,8 @@ const projects = [
       'Docker',
       'AWS'
     ],
-    'image':'../../assets/PortfolioHome.PNG',
-    'demo':'https://www.youtube.com/embed/fnVsgb1SXU8',
+    'image':'../../assets/Portfolio/PortfolioHome.PNG',
+    'demo':'fnVsgb1SXU8',
     'grid_tiles':[{text: 'One', cols: 3, rows: 1, background_color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, background_color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, background_color: 'lightpink'},
@@ -106,8 +114,8 @@ const projects = [
       'Eclipse',
       'GitHub'
     ],
-    'image':'../../assets/TransactionHistory.PNG',
-    'demo':'https://www.youtube.com/embed/fnVsgb1SXU8',
+    'image':'../../assets/SpringbootBank/TransactionHistory.PNG',
+    'demo':'fnVsgb1SXU8',
     'grid_tiles':[{text: 'One', cols: 3, rows: 1, background_color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, background_color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, background_color: 'lightpink'},
@@ -125,8 +133,8 @@ const projects = [
       'Eclipse',
       'GitHub'
     ],
-    'image':'../../assets/ShoppingGuest.PNG',
-    'demo':'https://www.youtube.com/embed/fnVsgb1SXU8',
+    'image':'../../assets/ShoppingApp/ShoppingGuest.PNG',
+    'demo':'fnVsgb1SXU8',
     'grid_tiles':[{text: 'One', cols: 2, rows: 1, background_color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, background_color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, background_color: 'lightpink'},
@@ -136,7 +144,7 @@ const projects = [
   {
     'id':5,
     'title':'Enrollee Backend',
-    'description':'EnrolleeBackend is a Java and Spring Boot based web application backend. Its purpose is to provide simple API request routes for the use of manipulating data in a MongoDB database. ',
+    'description':'EnrolleeBackend to provide simple API request routes for the use of manipulating enrollee data in a MongoDB database. ',
     'technologies':[
       'Java',
       'Springboot',
@@ -147,8 +155,8 @@ const projects = [
       'Postman',
       'MongoDB Atlas'
     ],
-    'image':'../../assets/EnrolleeBackendPostman.PNG',
-    'demo':'https://www.youtube.com/embed/fnVsgb1SXU8',
+    'image':'../../assets/EB/EnrolleeBackendPostman.PNG',
+    'demo':'fnVsgb1SXU8',
     'grid_tiles':[{text: 'One', cols: 3, rows: 1, background_color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, background_color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, background_color: 'lightpink'},
