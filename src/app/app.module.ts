@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { HomeComponent } from './home/home.component';
 import { SocialComponent } from './social/social.component';
@@ -20,6 +22,7 @@ import { TechnologiesComponent } from './technologies/technologies.component';
 import { ProjectComponent } from './project/project.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProjectPictureDialogComponent } from './project-picture-dialog/project-picture-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { MenuComponent } from './menu/menu.component';
     PortfolioComponent,
     TechnologiesComponent,
     ProjectComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    ProjectPictureDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { MenuComponent } from './menu/menu.component';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

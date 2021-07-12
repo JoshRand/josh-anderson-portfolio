@@ -1,0 +1,13 @@
+<body>
+    <div class="main-dialog">
+        <section class="carousel" >
+            <button mat-icon-button class="carousel-left-arrow-button" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
+            <div class="carousel-item">
+                <img class="dialog-image" id="carousel-item-center-dialog" src="{{slides.slide[slide_index].image}}">
+            </div>
+            <button mat-icon-button class="carousel-right-arrow-button" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
+        </section>
+        <a class="carousel-item-description">{{slides.slide[slide_index].image_description}}</a>
+    </div>
+    
+</body>
