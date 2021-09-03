@@ -1,110 +1,211 @@
 h1{
-    color:greenyellow !important;
+    text-shadow: black 2px 2px 3px;
 }
-/deep/ .mat-mini-fab{
-    background-color:greenyellow;
-}
-.grid-img{
-    width: 900px;
-    max-width: 1000px;
-    scale:60%;
-    object-fit: scale-down;
-}
+@media only screen and (max-width: 1000px)
+{
+    .spinner-div-project{
+        /* position: relative; */
+        display: block;
+        margin-top: 75vw;
+        margin-left: 35vw;
+    }
+    .top-spacer{
+        margin-top:100px !important;
+    }
+    h1{
+        color:greenyellow !important;
+        font-size: calc(2vw + 20px);
+    }
+    .desktop-grid{
+        display: none;
+        
+    }
+    .mobile-grid{
+        margin-right: 20px;
+        margin-left: 20px;
+        height: 100%;
+        
+    }
+    .grid-tile{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .grid-tile .grid-img{
+       width:100% !important;
+       height:auto !important;
+    }
+    .carousel{
+        margin-right: auto;
+        margin-left: auto;
+        background-color: none;
+        border:grey 1pt solid;
+        position: relative;
+        overflow-x:hidden;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color:greenyellow !important;
+    }
+   
+    .carousel-left-arrow-button-project{
+        position:absolute;
+        top:0%;
+        left:0px;
+        height: 100%;
+        /* background-color: #673ab7;  */
+        background-color:transparent;
 
-p{
-    position: absolute; 
-    /* display: flex; */
-    left:5px;
-    
+    }
+    .carousel-right-arrow-button-project{
+        position:absolute; 
+        top:0%;
+        right:0px;
+        float: right;
+        height: 100%;
+        background-color: transparent;
+         /* background-color: #673ab7;  */
+    }
+    .carousel-item-description-project{
+        margin-top:5px;
+        display: block;
+        color:greenyellow;
+        text-align: center; 
+        /* background-color: grey; */
+    }
+    .carousel .carosel-img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(98vh) !important;
+        max-height:calc(90vh) !important;
+        min-height:300px !important;
+    }
+    .zoom-in{
+        position: absolute;
+        left:47%;
+        top:43%;
+        /* right:40px; */
+        opacity: 0;
+        z-index: 2;
+    }
+    .carousel-item:hover .zoom-in{
+        transition: 0.5s ease-in;
+        opacity: 1;
+        font-size: 50px;
+    }
 }
-.title{
-    bottom:5px;
-}
-.text{
-    text-indent: 30px;
-    top:5px;
-}
-mat-grid-tile{
-    z-index: 0;
-    display: block;
-    
-}
+/* Desktop  */
+@media only screen and (min-width: 1000px)
+{ 
+    .spinner-div-project{
+        /* position: relative; */
+        display: block;
+        margin-top: 20vw;
+        margin-left: 48vw;
+        margin-right: auto;
+    }
+    .top-spacer{
+        margin-top:170px !important;
+    }
+    .mobile-grid{
+        display: none;
+    }
+    h1{
+        color:greenyellow !important;
+    }
+    .mat-mini-fab{
+        background-color:greenyellow;
+    }
+    .grid-img{
+        width: 900px;
+        max-width: 1000px;
+        scale:60%;
+        object-fit: scale-down;
+    }
 
-.main-div{
-    margin-top: -48px; margin-left: auto;margin-right: auto;width:900px;
-}
-h1{
-    font-size: 50px;
-}
-.zoom-in{
-    position: absolute;
-    left:47%;
-    top:43%;
-    /* right:40px; */
-    opacity: 0;
-    z-index: 2;
-}
-.carousel{
-    /* margin-top: -100px; */
-    width:800px;
-    height:400px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: none;
-    border:grey 1pt solid;
-    position: relative;
-    overflow-x:hidden;
-}
-.carousel-left-arrow-button{
-    position:absolute;
-    top:45%;
-    left:0px;
-    background-color: #673ab7;
-}
-.carousel-right-arrow-button{
-    position:absolute; 
-    top:45%;
-    right:0px;
-    float: right;
-    background-color: #673ab7;
-}
-.carousel-item-description{
-    margin-top:5px;
-    display: block;
-    text-align: center;
-    color:greenyellow;
-    
-    /* background-color: grey; */
-}
-.carousel{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    color:greenyellow !important;
-    
-}
+   .title{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+   }
+   
+    mat-grid-tile{
+        z-index: 0;
+        display: block;
+        
+    }
 
-.carosel-img{
-    /* image-rendering: optimizeSpeed; */
-    object-fit: scale-down;
-    margin-left: auto;
-    margin-right:auto;
-    top:50%;
-    max-height:calc(800px + 1vw);
-    max-width: calc(1000px + 20vw);
-}
-.carousel-item{
-    display: flex;
-    /* background-color: green; */
-    width: inherit;
-    height:inherit;
-}
-.carousel-item:hover{
-    cursor: pointer;
-    
-}
-.carousel-item:hover .zoom-in{
-    transition: 0.5s ease-in;
-    opacity: 1;
-    font-size: 50px;
+    .main-div{
+        margin-top: -48px; margin-left: auto;margin-right: auto;width:900px;
+    }
+    h1{
+        font-size: 50px;
+    }
+    .zoom-in{
+        position: absolute;
+        left:47%;
+        top:43%;
+        /* right:40px; */
+        opacity: 0;
+        z-index: 2;
+    }
+    .carousel{
+        margin-right: auto;
+        margin-left: auto;
+        background-color: none;
+        border:grey 1pt solid;
+        position: relative;
+        overflow-x:hidden;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color:greenyellow !important;
+        height: 400px;
+    }
+   
+    .carousel-left-arrow-button-project{
+        position:absolute;
+        top:0%;
+        height:100%;
+        left:0px;
+        /* background-color: #673ab7; */
+        background-color: transparent;
+        color:greenyellow;
+    }
+    .carousel-right-arrow-button-project{
+        position:absolute; 
+        top:0%;
+        right:0px;
+        float: right;
+        height: 100%;
+        /* background-color: #673ab7; */
+        background-color: transparent;
+        color:greenyellow;
+    }
+    .carousel-item-description-project{
+        margin-top:5px;
+        display: block;
+        text-align: center;
+        color:greenyellow;
+        
+        /* background-color: grey; */
+    }
+    .carousel .carosel-img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(98vh - 200px) !important;
+        max-height:calc(60vh) !important;
+        min-height:300px !important;
+    }
+   
+    .carousel-item:hover{
+        cursor: pointer;
+        
+    }
+    .carousel-item:hover .zoom-in{
+        transition: 0.5s ease-in;
+        opacity: 1;
+        font-size: 50px;
+    }
 }

@@ -1,0 +1,21 @@
+@media only screen and (min-width: 1000px){
+        
+    img{
+        height:45px;
+        width: 45px;
+    }
+    span{
+        margin-right: 23px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+        
+    img{
+        height:30px;
+        width: 30px;
+    }
+    span{
+        margin-right: 8px;
+    }
+}

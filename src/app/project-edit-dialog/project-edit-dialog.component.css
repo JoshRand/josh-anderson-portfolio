@@ -1,0 +1,14 @@
+.projectEditDialog .mat-dialog-container{
+    background-color: grey !important;
+    /* width: 100vw; */
+}
+.main-edit-box p{
+    color: white;
+}
+.main-edit-box label{
+    color: white;
+}
+
+button{
+    color: white;
+}

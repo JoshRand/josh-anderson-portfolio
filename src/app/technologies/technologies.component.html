@@ -1,11 +1,97 @@
-<a *ngFor="let technology of technologies">
+<div *ngFor="let technology of technologies">
     <a *ngFor="let tech of technology; index as i;">
-        <a *ngIf="i != technology.length - 1">
-            {{tech}}, 
-            
-        </a>
-        <a *ngIf="i == technology.length - 1">
-            {{tech}}
+        <a *ngIf="i != technology.length">
+            <!-- {{tech}},  -->
+        <span *ngIf="tech == 'Angular'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/angular.svg" title="Angular">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Java'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/java.svg" title="Java">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Bootstrap'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/bootstrap.svg" title="Bootstrap">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'C#'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/csharp.svg" title="C#">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Springboot'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/spring.svg" title="Springboot">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Typescript'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/typescript.svg" title="TypeScript">
+            </mat-icon>       
+        </span>
+         <span *ngIf="tech == 'Android Studio'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/androidstudio.svg" title="Android Studio">
+            </mat-icon>       
+        </span>
+         <span *ngIf="tech == 'Eclipse'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/eclipse.svg" title="Eclipse">
+            </mat-icon>       
+        </span>
+         <span *ngIf="tech == 'Visual Studio'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/visualstudio.svg" title="Visual Studio">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Arduino'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/arduino.svg" title="Arduino">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Bluetooth'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/bluetooth.svg" title="Bluetooth">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'MySQL'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/mysql.svg" title="MySQL">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'MongoDB'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/mongodb.svg" title="MongoDB">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == '.NET'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/dotnet.svg" title="Dot Net">
+            </mat-icon>       
+        </span>
+        <span *ngIf="tech == 'Visual Studio Code'">
+            <!-- {{tech}} -->
+            <mat-icon>
+                <img src="../../assets/Icons/visualstudiocode.svg" title="Visual Studio Code">
+            </mat-icon>       
+        </span>
         </a>
     </a>
-</a>
+</div>

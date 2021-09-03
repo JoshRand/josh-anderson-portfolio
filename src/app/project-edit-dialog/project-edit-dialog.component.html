@@ -1,0 +1,40 @@
+<div class="main-edit-box">
+
+<p> Editing project ID = {{ project.id }} <br>project Name = {{project.title}}</p>
+
+<form [formGroup]="projectEditForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <label>Title</label>
+    <input matInput id="title" type="text" value={{project.title}} formControlName="title"/>
+  </mat-form-field>
+ <br> 
+  <mat-form-field appearance="fill">
+    <label>Description</label>
+    <textarea matInput id="description" value={{project.description}} formControlName="description"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <label>Technologies</label>
+      <input matInput value={{project.technologies}} formControlName="technologies" style="margin-top:10px;border-bottom:lightgrey solid 1pt">
+    </mat-form-field>
+  <br>
+  <!-- <mat-form-field appearance="fill">
+    <label>Tiles</label>
+      <div *ngFor="let slide of project.slides; let i = index">
+        <label>Slide Title</label>
+        <input matInput value={{slide.title}} >
+        
+
+      </div>
+    </mat-form-field> -->
+    <mat-form-field appearance="fill">
+      <label>About Content</label>
+      <textarea matInput value={{project.tiles[1].content}} formControlName="content"></textarea>
+    </mat-form-field>
+  <br>
+  <button type="submit" mat-flat-button>
+      Save
+  </button>
+</form>
+
+</div>

@@ -14,12 +14,12 @@ export class AppComponent {
   public currentScrollPos: number = 0;
 
   @HostListener(':scroll') scrolling(){
-    // console.log('scrolling');
+     console.log('scrolling');
     let gridBox = document.getElementById('gridid').getBoundingClientRect();
     // console.log(gridBox.top);
     this.currentScrollPos = (-1)*gridBox.top + 70 + gridBox.height + 170;
-    
-    if(this.currentScrollPos <= gridBox.height)
+    console.log(this.currentScrollPos);
+    if(this.currentScrollPos <= gridBox.height )
     {
       let doc = document.getElementById("navbar").style.top = "0";
     }
@@ -32,6 +32,8 @@ export class AppComponent {
       let doc = document.getElementById("navbar").style.top = "-80px";
     }
     this.prevScrollPos = this.currentScrollPos;
+
+    
 
   }
   // on scroll function to decide if navbar needs to be visible or not

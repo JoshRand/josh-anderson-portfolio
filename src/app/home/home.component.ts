@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   // Test Canvas to display particles
   canvas;
   // gravity for particles
-  gravity: Vec2 = new Vec2(0,0.09);
+  gravity: Vec2 = new Vec2(0,0.009);
   // Test array for grid
   test_array: Array<number> = new Array(12);
   // Text to type
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   // in ms
   text_delay: number = 16;
   // animation speed 60hz - 240hz
-  animation_speed: number = 6;
+  animation_speed: number = 20;
   // Initial position of Array List
   array_position: number = 0;
   // Initial count of current chosen array from array list
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
     //   introduction_text_holder.innerHTML += element;
     // });
     
-      var rect = cursor_for_particles.getBoundingClientRect();
+    var rect = cursor_for_particles.getBoundingClientRect();
     // start partical emmission 
     if(this.count == 0 && this.array_position == 0)
       setTimeout(()=>{this.DrawOnCanvas(rect.left - 1, rect.top +10);},this.animation_speed);

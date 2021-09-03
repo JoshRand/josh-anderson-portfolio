@@ -4,52 +4,59 @@
 } */
 .maindialog .mat-dialog-container{
     background-color:rgb(41, 41, 41) !important;
-    height:calc(800px + 1vw);
-    width: calc(1200px + 20vw);
+    height:calc(80vw + 200px);
+    width: calc(90vw+200px );
  }
 /*
 .mat-dialog-container{
     background-color:rgb(41, 41, 41) !important;
 } */
-.carousel-item{
-    display:table-cell;
-    /* background-color: green; */
-    width: inherit;
-    height:inherit;
-    vertical-align: middle;
-}
+
 .carousel{
-    display: table;
+    display: block;
     margin-left: auto;
     margin-right: auto;
+    max-height: 80vw;
     color:greenyellow !important;
 }
 .dialog-image{
     /* image-rendering: optimizeSpeed; */
+    display: block;
     object-fit: scale-down;
-    
+    margin-top: 10%;
     position: relative;
     margin-left: auto;
     margin-right:auto;
-    max-height:calc(700px + 1vw);
-    max-width: calc(1000px + 20vw);
+    min-width: 80vw;
+    max-height:calc(500px + 1vw);
+    max-width: calc(1000px + 1vw);
 }
-
 .carousel-left-arrow-button{
     position:absolute;
-    top:45%;
-    left:200px;
-    background-color: #673ab7;
+    top:40%;
+    height:20%;
+    z-index: 2;
+    left:30px;
+    background-color: black;
+    opacity: 60%;
+    color:greenyellow;
+    touch-action: manipulation;
 }
 .carousel-right-arrow-button{
     position:absolute; 
-    top:45%;
-    right:200px;
+    top:40%;
+    right:30px;
     float: right;
-    background-color: #673ab7;
+    height: 20%;
+    /* background-color: #673ab7; */
+    background-color: black;
+    opacity: 60%;
+    color:greenyellow;
+    touch-action: manipulation;
 }
 .carousel-item-description{
-    margin-top:5px;
+    margin-top:0px;
+    margin-left:3vw;
     display: block;
     text-align: center;
     color:greenyellow;

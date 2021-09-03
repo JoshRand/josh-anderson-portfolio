@@ -1,50 +1,87 @@
-<div class="main-div">
-    <div style="margin-top:170px">
-        <h1 style="text-align: center;">{{project.title}}</h1>
-        <button  *ngIf="project.github != ''" style="background-color: greenyellow;margin-left:47%;margin-right:auto;" mat-fab (click)="openGithub();">
-            <mat-icon><img src="../../assets/Portfolio/githubgrey.svg" /></mat-icon>
-        </button>
-        <mat-grid-list cols="7" rowHeight="20px" id="gridid">
-            <mat-grid-tile
-            *ngFor="let tile of project.grid_tiles"
-            [colspan]="tile.cols"
-            [rowspan]="tile.rows"
-            [style.background]="tile.background_color">
-                <div *ngIf="tile.tile_type === 'image'">
-                    <img class="grid-img" src="{{tile.image}}">
-                </div>
-                <div *ngIf="tile.title != ''">
-                    <p class="title" style="font-size: 30px;color:greenyellow; text-align: left;">{{tile.title}}</p>
-                </div>
-                <div *ngIf="tile.tile_type === 'text'">
-                    <p class="text">{{tile.content}}</p>
-                </div>
-                <div *ngIf="tile.tile_type === 'carousel'">
-                    <section class="carousel" >
-                        <button mat-icon-button class="carousel-left-arrow-button" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
-                        <div class="carousel-item" (click)="openDialog()">
-                            <mat-icon class="zoom-in">zoom_in</mat-icon>
-                            <img class="carosel-img"  src="{{slides[slide_index].image}}">
-                            
+<div id="gridid">
+<!-- <button mat-flat-button (click)="OpenProjectEditor()" class="learn-more" style="margin-top: 100px; margin-left: auto;margin-right: auto; display: block; ">(Debug) Edit Project</button> -->
+<div *ngIf="this.loading == true" class="spinner-div-project"><mat-spinner></mat-spinner></div>
+<div *ngIf="this.loading != true">
+        <div class="main-div" *ngIf="project != null">
+            <div class="top-spacer">
+                <h1 style="text-align: center;">{{project.title}}</h1>
+                <button  *ngIf="project.github != ''" style="background-color: greenyellow;margin-left:47%;margin-right:auto;" mat-fab (click)="openGithub();">
+                    <mat-icon><img src="../../assets/Icons/githubgrey.svg" /></mat-icon>
+                </button>
+                    <div class="mobile-grid">
+                        <div *ngFor="let tile of project.tiles" class="grid-tile">
+                            <div *ngIf="tile.type === 'image'">
+                                <img class="grid-img" src="{{tile.image}}">
+                            </div>
+                            <div *ngIf="tile.title != ''">
+                                <p class="title" style="font-size: 30px;color:greenyellow; text-align: left;text-indent: 30px;text-shadow: black 2px 2px 3px;">{{tile.title}}</p>
+                            </div>
+                            <div *ngIf="tile.type === 'text'">
+                                <p class="text" style=" text-indent: 30px; ">{{tile.content}}</p>
+                            </div>
+                            <div *ngIf="tile.type === 'carousel'">
+                                <section class="carousel" >
+                                    <button mat-flat-button class="carousel-left-arrow-button-project" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
+                                    <div class="carousel-item" (click)="openDialog()">
+                                        <mat-icon class="zoom-in">zoom_in</mat-icon>
+                                        <img class="carosel-img"  src="{{slides[slide_index].image}}">
+                                        
+                                    </div>
+                                    <button mat-flat-button class="carousel-right-arrow-button-project" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
+                                </section>
+                                <a class="carousel-item-description-project">{{slides[slide_index].description}}</a>
+                            </div>
+                            <div *ngIf="tile.type === 'demo'">
+                                <iframe width="100%"
+                                height="300px" 
+                                [src]="demoUrl" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allowfullscreen></iframe>
+                            </div>
+                        
                         </div>
-                        <button mat-icon-button class="carousel-right-arrow-button" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
-                    </section>
-                    <a class="carousel-item-description">{{slides[slide_index].image_description}}</a>
-                </div>
-                <div *ngIf="tile.tile_type === 'demo'">
-                    <iframe width="560"
-                     height="315" 
-                     [src]="demoUrl" 
-                     title="YouTube video player" 
-                     frameborder="0" 
-                     allowfullscreen></iframe>
-                </div>
-               
-            </mat-grid-tile>
-        </mat-grid-list>
-       
-  
-      
-    </div>
-    
-<div>
+                    </div>
+
+                
+                    <div class="desktop-grid">
+                        <div
+                        *ngFor="let tile of project.tiles" >
+                            <div *ngIf="tile.type === 'image'">
+                                <img class="grid-img" src="{{tile.image}}">
+                            </div>
+                            <div *ngIf="tile.title != ''">
+                                <p class="title" style="font-size: 30px;color:greenyellow; text-align: left; text-indent: 30px; text-shadow: black 2px 2px 3px;">{{tile.title}}</p>
+                            </div>
+                            <div *ngIf="tile.type === 'text'">
+                                <p class="text" style=" text-indent: 30px; ">{{tile.content}}</p>
+                            </div>
+                            <div *ngIf="tile.type === 'carousel'">
+                                <section class="carousel" >
+                                    <button mat-flat-button class="carousel-left-arrow-button-project" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
+                                    <div class="carousel-item" (click)="openDialog()">
+                                        <mat-icon class="zoom-in">zoom_in</mat-icon>
+                                        <img class="carosel-img"  src="{{slides[slide_index].image}}">
+                                        
+                                    </div>
+                                    <button mat-flat-button class="carousel-right-arrow-button-project" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
+                                </section>
+                                <a class="carousel-item-description-project">{{slides[slide_index].description}}</a>
+                            </div>
+                            <div *ngIf="tile.type === 'demo'">
+                                <iframe width="100%"
+                                height="600" 
+                                [src]="demoUrl" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allowfullscreen></iframe>
+                            </div>
+                        
+                        </div>
+                    </div>
+            </div>
+        </div>
+</div>
+<div style="margin-top: 200px; display: block;">
+
+</div>
