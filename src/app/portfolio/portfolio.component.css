@@ -23,7 +23,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    
+    /* margin-bottom: 5px; */
    
 }
 .spinner-div{
@@ -109,28 +109,6 @@ canvas{
     object-fit: contain;
 }
 
-body{
-    color:white;
-    /* overflow: auto; */
-    height: 100%; 
-    overflow:auto;
-    background-size: 400% 400%;
-    background: linear-gradient(-45deg,  rgb(30, 30, 30),rgb(41, 41, 41),rgb(53, 53, 53), rgb(41, 41, 41), rgb(30, 30, 30));
-    scroll-behavior: smooth;
-    animation: gradient 20s ease infinite;
-  }
-  
-  @keyframes gradient{
-    0% {
-    background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 @media only screen and (min-width: 1000px)
 {
     .mobile{
@@ -148,7 +126,7 @@ body{
         width: auto;
         min-width: 250px;
         min-height: 220px;
-        background-color: rgb(66, 66, 66);
+        /* background-color: rgb(66, 66, 66); */
     }
     
     
@@ -168,6 +146,11 @@ body{
 
 @media only screen and (max-width: 1000px)
 {
+    .demo-project-text
+    {
+        text-shadow: black 2pt 2pt 3pt;
+        font-size: 30px;
+    }
     /* mobile */
     .desktop{
         display: none;
@@ -184,7 +167,7 @@ body{
 
     }
     .grid-item{
-        background-color: rgb(66, 66, 66);
+        /* background-color: rgb(66, 66, 66); */
     }
     .grid-item1 > a{
         font-size: calc(15px + 3vw);

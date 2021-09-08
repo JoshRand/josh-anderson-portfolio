@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { HomeComponent } from './home/home.component';
 import { SocialComponent } from './social/social.component';
@@ -28,6 +29,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ProjectPictureDialogComponent } from './project-picture-dialog/project-picture-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectEditDialogComponent } from './project-edit-dialog/project-edit-dialog.component';
+import { ResumeComponent } from './resume/resume.component';
+import { TextAnimatorComponent } from './text-animator/text-animator.component';
 
 
 @NgModule({
@@ -43,6 +46,8 @@ import { ProjectEditDialogComponent } from './project-edit-dialog/project-edit-d
     AboutMeComponent,
     ProjectPictureDialogComponent,
     ProjectEditDialogComponent,
+    ResumeComponent,
+    TextAnimatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { ProjectEditDialogComponent } from './project-edit-dialog/project-edit-d
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,225 @@
+
+h1
+{
+    margin-top: 20px;
+}
+
+canvas{
+    position:fixed;
+    overflow: hidden;
+    top:0;
+    left:0;
+    image-rendering: optimizeQuality;
+    pointer-events:none;
+}
+
+.particle_cursor
+{
+    opacity: 0;
+    text-align: center;
+}
+
+@keyframes slide-in {
+
+   0% {opacity:0;left:-25vw;} 
+   100% {opacity:100%;left:0px;} 
+}
+
+.grid-item:hover{
+    /* transition: 500ms linear; */
+    border-color:greenyellow;
+}
+
+.grid-container{
+    margin-top: 80px;
+    position: absolute;
+    display: grid;
+    /* grid-template-columns: repeat(5,1fr); */
+   
+    /* grid-template-rows: auto; */
+    grid-row-gap:20px;
+    
+    
+    /* margin-left: calc(15vw);
+    margin-right: calc(10vw); */
+    align-items: baseline;
+    
+}
+
+.technology
+{
+  grid-area: technology;
+ text-align: center;
+  display: block;
+  /* background-color: grey; */
+}
+.languages
+{
+    display: block;
+    max-width: 300px;
+    animation-name: slide-in;
+    animation-duration: 1s;
+}
+.frameworks
+{
+    max-width: 300px;
+    display: block;
+    grid-area: framework;
+    animation-name: slide-in;
+    animation-duration: 1s;
+/* height: auto;  */
+}
+.devtools
+{
+    max-width: 300px;
+    display: block;
+    animation-name: slide-in;
+    animation-duration: 1s;
+}
+.education
+{
+    grid-area:education;
+}
+.educations
+{
+    display: block;
+    grid-area: educations;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 40vw;
+    /* min-width */
+    /* margin-left: 10vw */
+    /* margin-right: calc(10vw); */
+}
+.work
+{
+    grid-area: work;
+}
+.workexp
+{
+    display: block;
+    grid-area: workexp;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 40vw;
+}
+.portfolio-button{
+    grid-area:button;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    border-radius: 0;
+    opacity: 100%;
+    color:greenyellow;
+  }
+@media only screen and (min-width: 1000px)
+{
+
+    .technology
+    {
+        font-size: 50px;
+    }
+    .mobile{
+        display: none;
+    }
+ 
+    .technology-box
+    {
+        margin:5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 200px;
+        width: 300px;
+        border: solid black 1pt;
+        
+    }
+    .education{
+        font-size:50px;
+    }
+    .work{
+        font-size: 50px;
+    }
+    .grid-container
+    { 
+        grid-column-gap: 20px;
+        grid-template-columns: 30 30 30;
+        left:calc(50vw - 505px);
+        grid-template-areas: 
+        "technology technology technology technology technology technology"
+        "languages languages frameworks frameworks devtools devtools"
+        "education education education education education education"
+        "educations educations educations educations educations educations"
+        "work work work work work work"
+        "workexp workexp workexp workexp workexp workexp"
+        "button button button button button button";
+    }
+}
+
+@media only screen and (max-width: 1000px)
+{
+    .technology
+    {
+        font-size: 30px;
+    }
+    .grid-container
+    {
+        width: 100%;
+        /* background-color: green; */
+        /* grid-column-gap: 5px; */
+        /* grid-template-columns: repeat(2,1fr); */
+        /* left:calc(40vw - 290px); */
+        grid-template-areas: 
+        "technology technology technology technology technology technology"
+        "languages languages languages frameworks frameworks frameworks"
+        "devtools devtools devtools devtools devtools devtools"
+        "education education education education education education"
+        "educations educations educations educations educations educations"
+        "work work work work work work"
+        "workexp workexp workexp workexp workexp workexp"
+        "button button button button button button";
+        left:calc(20vw -1vw);
+        overflow-x: hidden;
+    }
+   .education
+   {
+       font-size: 30px;
+   }
+    .educations
+    {
+
+        min-width: 10vw;
+        width: 80%;
+    }
+    .work
+    {
+        font-size: 30px;
+    }
+    .workexp
+    {
+        min-width: 10vw;
+        width: 80%;
+    }
+    .technology-box
+    {
+        font-size: 10px;
+        width: auto;
+        margin:5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: solid black 1pt;
+    }   
+    /* mobile */
+    .desktop{
+        display: none;
+    }
+  
+    .grid-item1 > a{
+        font-size: calc(15px + 3vw);
+    }
+   
+
+  
+  }

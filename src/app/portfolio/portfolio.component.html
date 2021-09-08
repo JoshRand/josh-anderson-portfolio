@@ -6,6 +6,7 @@
     <div *ngIf="this.loading != true">
         <div class="grid-item" *ngFor="let project of projects; let i = index">
             <div class="mobile">
+                
                 <div class="project-card" [routerLink]="['/project', project.id]" (click)="clickedProject()">
                     <div class="project-text">
                         <h1 style="color:greenyellow; text-shadow: black 2px 2px 3px;">{{project.title}}</h1> 

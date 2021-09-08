@@ -19,7 +19,7 @@ export class PortfolioComponent implements OnInit {
   // gravity for particles
   private gravity: Vec2 = new Vec2(0,0.008);
   // demo project text array 
-  text_array: Array<string> = new Array("Demo Projects");
+  text_array: Array<string> = new Array("Portfolio - Demo Projects");
   // animation speed 60hz - 240hz
   animation_speed: number = 20;
   chosen_array: string = this.text_array[0];

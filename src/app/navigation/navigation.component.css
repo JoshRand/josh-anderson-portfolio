@@ -1,6 +1,21 @@
+.logo
+{
+    user-select: none;
+}
 @media only screen and (min-width: 1000px)
 {
-    
+  
+    .logo
+    {
+        cursor:pointer;
+        position: absolute;
+        left:5px;
+        top:5px;
+        width: 50px;
+        height:50px;
+        -webkit-filter: drop-shadow( 2px 2px 5px rgba(0, 0, 0, .7));
+        filter: drop-shadow( 2px 2px 6px rgba(0, 0, 0, .7));
+    }
     .mobile
     {
         display: none;
@@ -13,6 +28,18 @@
 
 @media only screen and (max-width: 1000px)
 {
+
+    .logo
+    {
+        cursor:pointer;
+        position: absolute;
+        left:47.6vw;
+        top:5px;
+        width: 40px;
+        height:40px;
+        -webkit-filter: drop-shadow( 2px 2px 5px rgba(0, 0, 0, .7));
+        filter: drop-shadow( 2px 2px 6px rgba(0, 0, 0, .7));
+    }
     /* mobile */
     .desktop
     {

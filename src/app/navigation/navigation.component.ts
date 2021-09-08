@@ -12,7 +12,8 @@ export class NavigationComponent implements OnInit {
   public nav_links = [
     {'LinkName':"Home", 'Link':""},
     {'LinkName':"Portfolio", 'Link':"portfolio"},
-    {'LinkName':"About", 'Link':"about"}
+    {'LinkName':"About", 'Link':"about"},
+    {'LinkName':"Résumé", 'Link':"resume"}
 
   ]
   constructor(public location: Location) { }

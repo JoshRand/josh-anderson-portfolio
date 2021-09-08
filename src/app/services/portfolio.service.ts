@@ -4,7 +4,7 @@ import { Observable, Subscription } from "rxjs";
 import { Project } from "../model/project";
 
 // const PORTFOLIO_DATABASE_URI = "http://192.168.1.187:8080/";
-const PORTFOLIO_DATABASE_URI = "http://143.198.178.176:8080/";
+const PORTFOLIO_DATABASE_URI = "https://joshrand.xyz:8080/";
 // const PORTFOLIO_DATABASE_URI = "http://192.168.1.167:8080/";
 
 @Injectable({

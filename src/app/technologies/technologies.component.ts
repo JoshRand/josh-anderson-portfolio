@@ -9,7 +9,9 @@ export class TechnologiesComponent implements OnInit {
 
   constructor() { }
   @Input() technologies:string[] = [];
+  @Input() tech:string;
   ngOnInit(): void {
+    console.log(this.tech)
   }
 
 }

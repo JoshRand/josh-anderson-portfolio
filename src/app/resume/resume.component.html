@@ -1,0 +1,270 @@
+<div class="grid-container" id="gridid">
+  <br />
+
+  <h1
+    class="technology"
+    style="text-align: center; color: greenyellow; "
+  >
+    Technologies
+  </h1>
+
+  <div class="grid-item-resume">
+    <div class="languages">
+      <div class="mobile">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          Languages
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let language of languages; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="language.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ language.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ language.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+      <div class="desktop">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          Languages
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let language of languages; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="language.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ language.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ language.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-item-resume">
+    <div class="frameworks">
+      <div class="mobile">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          Frameworks
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let framework of frameworks; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="framework.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ framework.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ framework.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+      <div class="desktop">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          Frameworks
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let framework of frameworks; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="framework.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ framework.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ framework.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-item-resume">
+    <div class="devtools">
+      <div class="mobile">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          DevTools
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let devTool of devTools; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="devTool.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ devTool.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ devTool.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+      <div class="desktop">
+        <h2
+          style="
+            color: greenyellow;
+            text-shadow: black 2px 2px 3px;
+            text-align: center;
+          "
+        >
+          DevTools
+        </h2>
+        <div
+          class="technology-box"
+          *ngFor="let devTool of devTools; let i = index"
+        >
+          <div style="display: flex; margin: auto">
+            <app-technologies
+              [tech]="devTool.name"
+              style="margin-left: 3px; margin-top: 5px"
+            ></app-technologies>
+            <a style="margin: 10px">{{ devTool.name }}</a>
+          </div>
+          <mat-progress-bar
+            mode="determinate"
+            value="{{ devTool.proficiency }}"
+          ></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1
+    class="education"
+    style="text-align: center; color: greenyellow; "
+  >
+    Education
+  </h1>
+
+  <div class="educations">
+    <h2
+      style="
+        color: greenyellow;
+        text-shadow: black 2px 2px 3px;
+        text-align: center;
+      "
+    >
+    Bachelor of Science
+    </h2>
+      <div style="margin-bottom: 100px; border: 1pt solid black; padding:5px" >
+    <h3 style="
+    text-align: center;
+    color: greenyellow;
+     text-shadow: black 2px 2px 3px;">
+    Computer Engineering 
+    </h3>
+      <p style="text-align: center;">
+        Graduated: May 2019
+      <br>
+        University of Houston - Clear Lake
+      </p>
+  </div>
+  <h2
+  style="
+    color: greenyellow;
+    text-shadow: black 2px 2px 3px;
+    text-align: center;
+  "
+>
+JUMPro Certificate
+</h2>
+  <div style="margin-bottom: 20px; border: 1pt solid black; padding:5px" >
+    <h3 style="
+    text-align: center;
+    color: greenyellow;
+     text-shadow: black 2px 2px 3px;">
+    Java Full-Stack Web Technologies 
+</h3>
+      <p style="text-align: center;">
+        Graduated: July 2020
+      <br>
+        Cognixia JUMP
+      </p>
+  </div>
+</div>
+
+<!-- WORK -->
+<h1
+class="work"
+style="text-align: center; color: greenyellow;"
+>
+Work Experience
+</h1>
+
+<div class="workexp">
+ 
+  <div style="margin-bottom: 100px; border: 1pt solid black; padding:5px" >
+  <h3 style="
+  text-align: center;
+  color: greenyellow;
+   text-shadow: black 2px 2px 3px;">
+  Java Full-Stack Web Developer 
+  </h3>
+    <p style="text-align: center;">
+      July 2020 - Jan 2021
+    <br>
+    Cognixia - Houston TX
+    </p>
+</div>
+
+</div>
+     
+
+<button mat-flat-button color="primary" class="portfolio-button" id="portfolio-button"  [routerLink]="['/portfolio']">View my Portfolio<mat-icon>keyboard_arrow_right</mat-icon></button>
+</div>
