@@ -14,24 +14,24 @@ export class AppComponent {
   public currentScrollPos: number = 0;
 
   @HostListener(':scroll') scrolling(){
-     console.log('scrolling');
-    let gridBox = document.getElementById('gridid').getBoundingClientRect();
-    // console.log(gridBox.top);
-    this.currentScrollPos = (-1)*gridBox.top + 70 + gridBox.height + 170;
-    console.log(this.currentScrollPos);
-    if(this.currentScrollPos <= gridBox.height )
-    {
-      let doc = document.getElementById("navbar").style.top = "0";
-    }
-    else if (this.prevScrollPos > this.currentScrollPos) 
-    {
-      let doc = document.getElementById("navbar").style.top = "0";
-    } 
-    else if (this.prevScrollPos < this.currentScrollPos)
-    {//){
-      let doc = document.getElementById("navbar").style.top = "-80px";
-    }
-    this.prevScrollPos = this.currentScrollPos;
+    //  console.log('scrolling');
+    // let gridBox = document.getElementById('gridid').getBoundingClientRect();
+    // // console.log(gridBox.top);
+    // this.currentScrollPos = (-1)*gridBox.top + 70 + gridBox.height + 170;
+    // console.log(this.currentScrollPos);
+    // if(this.currentScrollPos <= gridBox.height )
+    // {
+    //   let doc = document.getElementById("navbar").style.top = "0";
+    // }
+    // else if (this.prevScrollPos > this.currentScrollPos) 
+    // {
+    //   let doc = document.getElementById("navbar").style.top = "0";
+    // } 
+    // else if (this.prevScrollPos < this.currentScrollPos)
+    // {//){
+    //   let doc = document.getElementById("navbar").style.top = "-80px";
+    // }
+    // this.prevScrollPos = this.currentScrollPos;
 
     
 

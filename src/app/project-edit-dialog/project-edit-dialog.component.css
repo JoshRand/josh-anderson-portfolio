@@ -1,14 +1,50 @@
 .projectEditDialog .mat-dialog-container{
+    position: absolute;
     background-color: grey !important;
+    width: 50vw;
+    height: 80%;
+    left: 200px;
+    top:20px;
+    /* overflow-y: visible; */
     /* width: 100vw; */
 }
-.main-edit-box p{
-    color: white;
+mat-form-field
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    border:black 1pt solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.main-edit-box label{
-    color: white;
+    .main-edit-box p{
+        color: white;
+    }
+    .main-edit-box label{
+        color: white;
 }
 
 button{
     color: white;
+}
+.about-content-field
+{
+
+    height: 200px;
+}
+.uri-preview
+{
+    width: 50px;
+    height: auto;
+}
+.slide-div
+{
+    height: auto;
+    overflow-y: hidden;
+}
+.delete-button
+{
+    background-color: red;
+    margin-bottom: 10px;
 }

@@ -1,21 +1,26 @@
 <div class="main-edit-box">
 
-<p> Editing project ID = {{ project.id }} <br>project Name = {{project.title}}</p>
+<p> Editing project ID = {{ projectEditId }} <br>project Name = {{projectName}}</p>
 
 <form [formGroup]="projectEditForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <label>Title</label>
-    <input matInput id="title" type="text" value={{project.title}} formControlName="title"/>
+    <input matInput id="title" type="text"  formControlName="title"/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>Portfolio Page Display Image</label>
+    <input matInput formControlName="image">
+      <img class="uri-preview" src="{{project.image}}"/> 
   </mat-form-field>
  <br> 
   <mat-form-field appearance="fill">
     <label>Description</label>
-    <textarea matInput id="description" value={{project.description}} formControlName="description"></textarea>
+    <textarea matInput id="description"  formControlName="description"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <label>Technologies</label>
-      <input matInput value={{project.technologies}} formControlName="technologies" style="margin-top:10px;border-bottom:lightgrey solid 1pt">
+      <input matInput  formControlName="technologies" style="margin-top:10px;border-bottom:lightgrey solid 1pt">
     </mat-form-field>
   <br>
   <!-- <mat-form-field appearance="fill">
@@ -29,12 +34,37 @@
     </mat-form-field> -->
     <mat-form-field appearance="fill">
       <label>About Content</label>
-      <textarea matInput value={{project.tiles[1].content}} formControlName="content"></textarea>
+      <textarea matInput class="about-content-field" formControlName="content"></textarea>
     </mat-form-field>
   <br>
+  <label>Pictures Urls</label>
+  <div class="slide-div" *ngFor="let slide of project.slides; let i = index">
+
+    <mat-form-field appearance="fill">
+      <label>Desc.</label>
+      <input matInput formControlName="slidesDescription{{i}}">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label>Url.</label>
+      <input matInput formControlName="slidesImage{{i}}">
+      <img class="uri-preview" src="{{project.slides[i].image}}"/> 
+    </mat-form-field>
+    <button mat-flat-button type="button" class="delete-button" (click)="deleteSlide(project.slides[i].image,i)">Delete</button>
+    <br>
+  </div>
   <button type="submit" mat-flat-button>
       Save
   </button>
+  <br>
+  <mat-form-field appearance="fill">
+    <label>New Slide Desc</label>
+    <input matInput formControlName="newSlideDesc">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label>New Slide Image URL</label>
+    <input matInput formControlName="newSlideImageUrl">
+  </mat-form-field>
+  <button type="button" mat-flat-button (click)="createSlide()">New Slide</button>
 </form>
 
 </div>

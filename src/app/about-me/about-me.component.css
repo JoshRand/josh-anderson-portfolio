@@ -11,6 +11,7 @@
 }
 .grid-item-intro{
     font-size: 15px;
+    
 }
 .grid-item-intro > p > a {
     color: greenyellow;
@@ -28,7 +29,8 @@
         grid-template-rows: repeat(1,1fr);
         /* background-color: #000000; */
         /* background-color:  rgb(66, 66, 66); */
-        border: 1pt black solid; 
+        border:1pt black solid;
+        box-shadow: greenyellow 0 0 3px;border: 1pt black solid; 
         max-width: 900px;
         grid-gap:20px;
         padding:20px;

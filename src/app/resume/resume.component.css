@@ -19,6 +19,13 @@ canvas{
     text-align: center;
 }
 
+.other-divs
+{
+    border:1pt black solid;
+    box-shadow: greenyellow 0 0 1px;
+    margin-bottom: 100px;
+    padding:5px
+}
 @keyframes slide-in {
 
    0% {opacity:0;left:-25vw;} 
@@ -133,7 +140,8 @@ canvas{
         margin-right: 10px;
         min-width: 200px;
         width: 300px;
-        border: solid black 1pt;
+        box-shadow: greenyellow 0 0 1px;
+         border: solid black 1pt;
         
     }
     .education{
@@ -167,10 +175,6 @@ canvas{
     .grid-container
     {
         width: 100%;
-        /* background-color: green; */
-        /* grid-column-gap: 5px; */
-        /* grid-template-columns: repeat(2,1fr); */
-        /* left:calc(40vw - 290px); */
         grid-template-areas: 
         "technology technology technology technology technology technology"
         "languages languages languages frameworks frameworks frameworks"
@@ -183,10 +187,10 @@ canvas{
         left:calc(20vw -1vw);
         overflow-x: hidden;
     }
-   .education
-   {
-       font-size: 30px;
-   }
+    .education
+    {
+        font-size: 30px;
+    }
     .educations
     {
 
@@ -209,7 +213,9 @@ canvas{
         margin:5px;
         margin-left: 10px;
         margin-right: 10px;
-        border: solid black 1pt;
+        border:1pt black solid;
+        box-shadow: greenyellow 0 0 1px;
+   
     }   
     /* mobile */
     .desktop{

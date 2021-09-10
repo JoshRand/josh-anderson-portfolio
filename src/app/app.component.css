@@ -1,14 +1,19 @@
 body{
+  height: 100%;  
+  overflow:auto;
+  position: relative;
     color:white;
-    height: 100%; 
-    overflow:auto;
     background: linear-gradient(-45deg,  rgb(30, 30, 30),rgb(41, 41, 41),rgb(50, 50, 50),rgb(50, 50, 50), rgb(41, 41, 41), rgb(30, 30, 30));
     background-size: 400% 400%;
     scroll-behavior: smooth;
     animation: gradient 10s ease-in infinite;
-    position: relative
-  }
+}
 
+body {
+    height  : 100%;
+    overflow: auto;
+    position: relative;
+}
   
   @keyframes gradient{
     0% {

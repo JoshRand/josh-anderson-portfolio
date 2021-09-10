@@ -1,5 +1,8 @@
 <div id="gridid">
-<!-- <button mat-flat-button (click)="OpenProjectEditor()" class="learn-more" style="margin-top: 100px; margin-left: auto;margin-right: auto; display: block; ">(Debug) Edit Project</button> -->
+    <div *ngIf="!this.production">
+        <button mat-flat-button (click)="OpenProjectEditor()" class="learn-more" style="margin-top: 100px; margin-left: auto;margin-right: auto; display: block; ">(Debug) Edit Project</button>
+
+    </div>
 <div *ngIf="this.loading == true" class="spinner-div-project"><mat-spinner></mat-spinner></div>
 <div *ngIf="this.loading != true">
         <div class="main-div" *ngIf="project != null">
@@ -24,12 +27,17 @@
                                     <button mat-flat-button class="carousel-left-arrow-button-project" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
                                     <div class="carousel-item" (click)="openDialog()">
                                         <mat-icon class="zoom-in">zoom_in</mat-icon>
-                                        <img class="carosel-img"  src="{{slides[slide_index].image}}">
+                                        <div *ngIf="this.project.slides.length != 0" >
+                                            <img class="carosel-img"  src="{{slides[slide_index].image}}">
+
+                                        </div>
                                         
                                     </div>
                                     <button mat-flat-button class="carousel-right-arrow-button-project" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
                                 </section>
-                                <a class="carousel-item-description-project">{{slides[slide_index].description}}</a>
+                                <div *ngIf="this.project.slides.length != 0" >
+                                    <a class="carousel-item-description-project"  >{{slides[slide_index].description}}</a>
+                                </div>
                             </div>
                             <div *ngIf="tile.type === 'demo'">
                                 <iframe width="100%"
@@ -61,12 +69,17 @@
                                     <button mat-flat-button class="carousel-left-arrow-button-project" (click)="decrementSlides()"><mat-icon>arrow_back</mat-icon></button>
                                     <div class="carousel-item" (click)="openDialog()">
                                         <mat-icon class="zoom-in">zoom_in</mat-icon>
-                                        <img class="carosel-img"  src="{{slides[slide_index].image}}">
+                                        <div *ngIf="this.project.slides.length != 0" >
+                                            <img class="carosel-img"  src="{{slides[slide_index].image}}">
+
+                                        </div>
                                         
                                     </div>
                                     <button mat-flat-button class="carousel-right-arrow-button-project" (click)="incrementSlides()"><mat-icon>arrow_forward</mat-icon></button>
                                 </section>
-                                <a class="carousel-item-description-project">{{slides[slide_index].description}}</a>
+                                <div *ngIf="this.project.slides.length != 0" >
+                                    <a class="carousel-item-description-project"  >{{slides[slide_index].description}}</a>
+                                </div>
                             </div>
                             <div *ngIf="tile.type === 'demo'">
                                 <iframe width="100%"

@@ -7,6 +7,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialo
 import { ProjectPictureDialogComponent } from '../project-picture-dialog/project-picture-dialog.component';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ProjectEditDialogComponent } from '../project-edit-dialog/project-edit-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-project',
@@ -26,6 +27,7 @@ export class ProjectComponent implements OnInit {
   public width:string;
   public loading: boolean = true;
   errorProject:string;
+  public production: boolean = false;
   constructor(private portfolioService: PortfolioService, route: ActivatedRoute, private sanitizer:DomSanitizer,private dialog:MatDialog) {
     this.project_id = parseInt(route.snapshot.paramMap.get('id'));
    }
@@ -36,20 +38,27 @@ export class ProjectComponent implements OnInit {
                                                                   (err: HttpErrorResponse) =>
                                                                   this.errorProject = `Can't get projects. Got ${err.message}`,
                                                                   () => { this.loading = false; this.onLoadCompleted(this.project)});;
-    
+    if(environment.production)
+    {
+      this.production = true;
+    }
     // console.log(this.getDemo());
     // window.scrollTo(0,0); 
   }
 
   public onLoadCompleted(data):void{
     this.project = data;
-    this.slides = this.project.slides;
+    if(this.project.slides != undefined)
+      this.slides = this.project.slides;
+    // console.log(" NO SLIDES ")
     // console.log(this.project);
     // console.log(this.slides);
     this.updateDemoUrl(this.project.demo);
     this.updateGithubUrl(this.project.github);
   }
   public incrementSlides():void{
+    if(this.project.slides == undefined)
+     return; 
     this.slide_index++;
     if(this.slide_index > this.slides.length - 1)
       this.slide_index = 0;

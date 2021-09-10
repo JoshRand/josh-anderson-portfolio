@@ -1,5 +1,11 @@
 .logo
 {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+mat-icon
+{
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
 }
 @media only screen and (min-width: 1000px)
@@ -62,6 +68,8 @@
         color: rgb(170, 255, 0);
         font-size: large;
         border-radius: 0;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
     }
     /* .mat-menu-buttons{
         color: rgb(170, 255, 0);
