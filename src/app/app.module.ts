@@ -30,7 +30,6 @@ import { ProjectPictureDialogComponent } from './project-picture-dialog/project-
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectEditDialogComponent } from './project-edit-dialog/project-edit-dialog.component';
 import { ResumeComponent } from './resume/resume.component';
-import { TextAnimatorComponent } from './text-animator/text-animator.component';
 
 
 @NgModule({
@@ -46,8 +45,7 @@ import { TextAnimatorComponent } from './text-animator/text-animator.component';
     AboutMeComponent,
     ProjectPictureDialogComponent,
     ProjectEditDialogComponent,
-    ResumeComponent,
-    TextAnimatorComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
@@ -70,5 +68,6 @@ import { TextAnimatorComponent } from './text-animator/text-animator.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
+  
+},)
 export class AppModule { }

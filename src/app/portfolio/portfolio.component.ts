@@ -5,6 +5,8 @@ import { Vec2 } from '../math/vec2';
 import { Particle } from '../model/particle';
 import { Project } from '../model/project';
 import { PortfolioService } from '../services/portfolio.service';
+import { ParticleEmitter } from '../utilities/particle-emitter';
+import { TypeWriter } from '../utilities/type-writer';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,32 +14,30 @@ import { PortfolioService } from '../services/portfolio.service';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
- // Test array for particles
-  private particles: Array<Particle> = [];
-  // Particle end boolean
-  private particle_condition: boolean = false;
   // gravity for particles
   private gravity: Vec2 = new Vec2(0,0.008);
   // demo project text array 
-  text_array: Array<string> = new Array("Portfolio - Demo Projects");
-  // animation speed 60hz - 240hz
-  animation_speed: number = 20;
-  chosen_array: string = this.text_array[0];
-  // in ms
-  text_delay: number = 16;
-  // Initial position of Array List
-  array_position: number = 0;
-  // Initial count of current chosen array from array list
-  count: number = 0;
-  timer_one;
-  timeout_two;
-  canvas;
+  textArray: Array<string> = new Array("Portfolio - Demo Projects");
+  
+  span: HTMLSpanElement;
+  timeOut;
+  timeOut2
+  timeOutArray = [];
+  timeOutArrayParticles = [];
+  canvas;  
+  rect;
+  particleEmitter: ParticleEmitter;
+  typeWriter: TypeWriter;
+   // Particle end boolean
+  particleStarted: boolean = false
+
   constructor(private portfolioService: PortfolioService) { }
 
   projects: Project[]; 
   public nav_status: boolean;
   public errorProjects: string;
   public loading: boolean = true;
+
   ngOnInit(): void {
     if (this.projects != undefined)
       this.loading = false;
@@ -46,20 +46,52 @@ export class PortfolioComponent implements OnInit {
               (err: HttpErrorResponse) =>
               this.errorProjects = `Can't get projects. Got ${err.message}`,
               () => { this.loading = false; this.onLoadCompleted(this.projects)});;
-    this.nav_status = true;
-
-    this.canvas = document.getElementById("canvas_portfolio") as HTMLCanvasElement;
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-  
-    this.timer_one = setTimeout(()=>this.TypeText(),100);
-    document.getElementById("navbar").style.top = "0px";
-    // console.log(this.projects[2]);
+    
   }
+  ngOnDestroy()
+  {
+    // this.timeOutArray.forEach(timeout => {
+      
+    //   clearTimeout(timeout);
+    //   console.log(timeout)
+    //   timeout = null;
+    // });
+    this.canvas = null;
+    this.timeOutArray = null;
+    this.timeOutArrayParticles = null;
+    this.particleEmitter.Destroy();
+    this.typeWriter = null;
+    this.particleEmitter = null;
+    // var id = window.setTimeout(function() {}, 0);
 
+    // while (id--) {
+    //  window.clearTimeout(id); // will do nothing if no timeout with id is present
+    // }
+  }
   public onLoadCompleted(data):void
   {
     this.projects = data;
+    this.nav_status = true;
+
+    this.canvas = document.getElementById("canvas_portfolio") as HTMLCanvasElement;
+    this.span = document.getElementById("demo-project-text");
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+  
+    document.getElementById("navbar").style.top = "0px";
+    this.particleEmitter = new ParticleEmitter(this.canvas);
+    this.particleEmitter.Initialize(10, 0.05, 200, 200, 'green', 'circle', new Vec2(0,0.009));
+    this.particleEmitter.SetParticleSize(4);
+    // 0 <  < 100;  5 is default
+    this.particleEmitter.SetParticleLifeTimeSpeed(5);
+    
+    // create typewriter initialize and start
+    this.typeWriter = new TypeWriter(this.textArray, this.span);   
+    this.typeWriter.Start();
+    this.TypeText();
+    this.particleEmitter.Start();
+    this.DrawParticles();
+
 
   }
 // relocates the navbar to the top of the view after clicking a project
@@ -72,99 +104,45 @@ export class PortfolioComponent implements OnInit {
     // console.log("Should reset navbar to 0")
   }
 
-  public TypeText(): void
+  TypeText()
   {
-    try {
-      // retrieves element from document for introduction
-      var introduction_text_holder = document.getElementById("demo-project-text");
-      
-      var rect = document.getElementById("particle_cursor").getBoundingClientRect();
+    this.timeOut = setTimeout(()=>{
 
-      // start partical emmission 
-      if(this.count == 0 && this.array_position == 0)
-        setTimeout(()=>{this.DrawOnCanvas(rect.right - 1, rect.top + 40);},this.animation_speed);
-      
-    
-      // if the count is not equal to text_array length then ++ count
-      if(this.count <= this.chosen_array.length - 1)
+      if(!this.typeWriter.GetStatus())
       {
-        // append string at count position into the html object
-        introduction_text_holder.innerHTML += this.chosen_array[this.count];
-    
-    
-        this.count++;
+        // clearTimeout(this.timeOut);
+        // this.showButton();
+        this.timeOutArray.forEach(timeout => {
+          console.log("here")
+          clearTimeout(timeout);
+        });
+        return;
       }
-      // if statement for printing the next string in the text_array
-      else if(this.array_position != this.text_array.length && this.count == this.chosen_array.length)
-      {
-        this.array_position++;
-        //console.log("selecting new string next position is " +this.array_position);
-        this.chosen_array = this.text_array[this.array_position];
-        this.count = 0;
-        if(this.array_position != this.text_array.length)
-          introduction_text_holder.innerHTML += "";
-      }
-      // trying to recursivly call the typetext method
-      if(this.array_position != this.text_array.length)
-      {
-        this.timeout_two = setTimeout(()=>{this.TypeText();},this.text_delay);
-      }
-      else
-      {
-        this.particle_condition = true;
-      }
-    } catch (error) {
-        
-    }
+    },16);
+    this.timeOutArray.push(this.timeOut);
   }
-
-
-  public DrawOnCanvas(x:number, y:number)
+  
+  DrawParticles()
   {
-    // Get cursor element for location of its relative top and bottom
-    var cursor_for_particles = document.getElementById("particle_cursor");
-    var ctx = this.canvas.getContext('2d');
-    ctx.clearRect(0,0, ctx.canvas.width,ctx.canvas.height);
-    // fill particle array
-    if(!this.particle_condition)
-    {
-      for( let i = 0; i < 5; i++)
-      {
-        this.particles.push(new Particle(x, y, 'AAFF00'));
-      }
-    }
-    
-    
-    // update each particle / show canvas
-    for (let particle of this.particles)
-    {
-      particle.applyForce(this.gravity);
-      particle.update();
-      particle.show(ctx);
-    }
-    //console.log(""+ this.particles.length + " Particles")
-    // delete finished particles
-    for (let i = this.particles.length - 1; i >= 0; i--)
-    {
-     
-      if(!this.particles[i].finished())
-      {
-        //console.log("finished particle in position" + i);
-        this.particles.splice(i, 1);
-      }
-    }
-    if(this.particles.length != 0)
-    {
-      try {
-        var rect = cursor_for_particles.getBoundingClientRect();
-     
-        //console.log(document.body.scrollTop);
-        setTimeout(()=>{this.DrawOnCanvas(rect.left - 1, rect.top +40);},this.animation_speed);
-    } catch (error) {
-        
-    }
-    }
-   
-  }
+    this.timeOut2 = setTimeout(()=>{
 
+      if(!this.typeWriter.GetStatus())
+      {
+        // Stopping particle emitter & returning/clearing timeouts once particles are gone
+        this.particleEmitter.Stop();
+        if(this.particleEmitter.GetStatus())
+        {
+          this.timeOutArrayParticles.forEach(timeout => {
+            clearTimeout(timeout);
+          });
+          return;
+        }
+      }
+      this.rect = document.getElementById("particle_cursor").getBoundingClientRect();
+      this.particleEmitter.SetPosition(this.rect.left - 1, this.rect.top + 30);
+      this.particleEmitter.DrawOnCanvas();
+      this.DrawParticles();
+    },16);
+    this.timeOutArrayParticles.push(this.timeOut2);
+  }
 }
